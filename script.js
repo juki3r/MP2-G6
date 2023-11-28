@@ -135,13 +135,11 @@ if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getI
             }else{
                 backyardbulb_status.src = "images/pic_bulbon.gif";
             }
-
-
-
-
 //Getting all Logs to be displayed
 //Using Stack method to push new logs into LocalStorage to be extract and use
 let textarea = document.getElementById('logs');
+
+
 
 
 
