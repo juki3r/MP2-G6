@@ -8,15 +8,6 @@ setInterval(function(){
 },1000)
 
 
-
-
-
-
-
-
-
-
-
 // ---------------Lights -----------------------------------------------------------------------------------------------------------------------------------------
 //Bedroom - 1
 var room1bulb_status = document.getElementById('room1bulb');
@@ -132,13 +123,11 @@ function backyardlight(){
     if(backyardbulb_status.src.match("bulbon")) {
         backyardbulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('backyard_light_switch', 'OFF');
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned off \n';
-        
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned off \n';     
         } else {
             backyardbulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('backyard_light_switch', 'ON');
-            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned on \n';
-            
+            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned on \n';          
             }
 }
 if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getItem('backyard_light_switch') == 'OFF')){
@@ -152,16 +141,7 @@ if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getI
 
 //Getting all Logs to be displayed
 //Using Stack method to push new logs into LocalStorage to be extract and use
-
-
-let fruits = localStorage.getItem('newlogs');
-
-if(fruits == null){
-    console.log('MT')
-}else{
-    console.log(fruits);
-    
-}
+let textarea = document.getElementById('logs');
 
 
 
