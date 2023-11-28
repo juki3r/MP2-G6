@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#dashboard{
+    
+}
+
+@media screen and (max-width:500px){
+    #dashboard{
+        font-size: 14px !important;
+    }
+}
