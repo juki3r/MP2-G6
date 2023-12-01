@@ -7,6 +7,9 @@ setInterval(function(){
     date.innerHTML = new Date().toLocaleDateString();
 },1000)
 
+// Text-speech
+var msg = new SpeechSynthesisUtterance();
+
 
 // ---------------Lights -----------------------------------------------------------------------------------------------------------------------------------------
 //Bedroom - 1
@@ -16,10 +19,14 @@ function room1light() {
         room1bulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('room_1_light_switch', 'OFF');
         textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 1 light is turned off \n'
+        msg.text = "Bedroom 1 light is off";
+        window.speechSynthesis.speak(msg);
         } else {
             room1bulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('room_1_light_switch', 'ON');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 1 light is turned on \n'
+            msg.text = "Bedroom 1 light is on";
+            window.speechSynthesis.speak(msg);
             }
 }
 if((localStorage.getItem('room_1_light_switch') == null) || (localStorage.getItem('room_1_light_switch') == 'OFF')){
@@ -34,10 +41,14 @@ function room2light() {
         room2bulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('room_2_light_switch', 'OFF');
         textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 2 light is turned off \n'
+        msg.text = "Bedroom 2 light is off";
+        window.speechSynthesis.speak(msg);
         } else {
             room2bulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('room_2_light_switch', 'ON');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 2 light is turned on \n'
+            msg.text = "Bedroom 2 light is on";
+            window.speechSynthesis.speak(msg);
             }
 }
 if((localStorage.getItem('room_2_light_switch') == null) || (localStorage.getItem('room_2_light_switch') == 'OFF')){
@@ -52,10 +63,14 @@ function room3light() {
         room3bulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('room_3_light_switch', 'OFF');
         textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 3 light is turned off \n'
+        msg.text = "Bedroom 3 light is off";
+        window.speechSynthesis.speak(msg);
         } else {
             room3bulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('room_3_light_switch', 'ON');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Bedroom 3 light is turned on \n'
+            msg.text = "Bedroom 3 light is on";
+            window.speechSynthesis.speak(msg);
             }
 }
 if((localStorage.getItem('room_3_light_switch') == null) || (localStorage.getItem('room_3_light_switch') == 'OFF')){
@@ -70,10 +85,14 @@ if((localStorage.getItem('room_3_light_switch') == null) || (localStorage.getIte
          livingroombulb_status.src = "images/pic_bulboff.gif";
          localStorage.setItem('livingroom_light_switch', 'OFF');
          textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Living room light is turned off \n'
+         msg.text = "Living room light is off";
+         window.speechSynthesis.speak(msg);
          } else {
              livingroombulb_status.src = "images/pic_bulbon.gif";
              localStorage.setItem('livingroom_light_switch', 'ON');
              textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Living room light is turned on \n'
+             msg.text = "Living room light is on";
+             window.speechSynthesis.speak(msg);
              }
  }
  if((localStorage.getItem('livingroom_light_switch') == null) || (localStorage.getItem('livingroom_light_switch') == 'OFF')){
@@ -88,10 +107,14 @@ if((localStorage.getItem('room_3_light_switch') == null) || (localStorage.getIte
          kitchenroombulb_status.src = "images/pic_bulboff.gif";
          localStorage.setItem('kitchenroom_light_switch', 'OFF');
          textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Kitchen room light is turned off \n'
+         msg.text = "Kitchen room light is off";
+         window.speechSynthesis.speak(msg);
          } else {
              kitchenroombulb_status.src = "images/pic_bulbon.gif";
              localStorage.setItem('kitchenroom_light_switch', 'ON');
              textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Kitchen room light is turned on \n'
+             msg.text = "Kitchen room light is on";
+             window.speechSynthesis.speak(msg);
              }
  }
  if((localStorage.getItem('kitchenroom_light_switch') == null) || (localStorage.getItem('kitchenroom_light_switch') == 'OFF')){
@@ -106,10 +129,14 @@ function frontyardlight(){
         frontyardbulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('frontyard_light_switch', 'OFF');
         textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front yard light is turned off \n'
+        msg.text = "Front yard light is off";
+        window.speechSynthesis.speak(msg);
         } else {
             frontyardbulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('frontyard_light_switch', 'ON');
             textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Front yard light is turned on \n'
+            msg.text = "Front yard light is on";
+            window.speechSynthesis.speak(msg);
             }
 }
 if((localStorage.getItem('frontyard_light_switch') == null) || (localStorage.getItem('frontyard_light_switch') == 'OFF')){
@@ -123,11 +150,17 @@ function backyardlight(){
     if(backyardbulb_status.src.match("bulbon")) {
         backyardbulb_status.src = "images/pic_bulboff.gif";
         localStorage.setItem('backyard_light_switch', 'OFF');
-        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned off \n';     
+        textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned off \n';
+        msg.text = "Back yard light is off";
+        window.speechSynthesis.speak(msg);
+        
         } else {
             backyardbulb_status.src = "images/pic_bulbon.gif";
             localStorage.setItem('backyard_light_switch', 'ON');
-            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned on \n';          
+            textarea.value += new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() +  '-> Back yard light is turned on \n';
+            msg.text = "Back yard light is on";
+            window.speechSynthesis.speak(msg);
+            
             }
 }
 if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getItem('backyard_light_switch') == 'OFF')){
@@ -135,16 +168,11 @@ if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getI
             }else{
                 backyardbulb_status.src = "images/pic_bulbon.gif";
             }
+
+
 //Getting all Logs to be displayed
-//Using Stack method to push new logs into LocalStorage to be extract and use
 let textarea = document.getElementById('logs');
-
-
-
-
-
-
-
+textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n'
 
 
 // ------------------ Graph Energy Monitor -------------------------------
