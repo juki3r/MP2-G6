@@ -171,7 +171,6 @@ if((localStorage.getItem('backyard_light_switch') == null) || (localStorage.getI
 
 
 //Getting all Logs to be displayed
-//Using Stack method to push new logs into LocalStorage to be extract and use
 let textarea = document.getElementById('logs');
 textarea.value = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString() + ' ->System up and running. \n'
 
