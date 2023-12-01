@@ -7,7 +7,7 @@ setInterval(function(){
     date.innerHTML = new Date().toLocaleDateString();
 },1000)
 
-// Text to Speech
+// Text-speech
 var msg = new SpeechSynthesisUtterance();
 
 
